@@ -19,8 +19,7 @@ fn greet(target: String) -> Template {
 
 #[get("/")]
 fn greeter_form() -> Template {
-    let context: HashMap<String, String> = HashMap::new();
-    Template::render("greeter_form", context)
+    Template::render("greeter_form", ())
 }
 
 #[post("/", data = "<target>")]

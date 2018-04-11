@@ -7,12 +7,10 @@ extern crate rocket_contrib;
 mod routers;
 use rocket_contrib::Template;
 use routers::greeter_router::get_routes;
-use std::collections::HashMap;
 
 #[get("/")]
 fn index() -> Template {
-    let context: HashMap<String, String> = HashMap::new();
-    Template::render("index", context)
+    Template::render("index", ())
 }
 
 fn main() {
